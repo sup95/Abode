@@ -4,6 +4,7 @@
   "description": "The Digital Abode",
   "main": "index.js",
   "dependencies": {
+    "vuepress": "^0.14.11",
     "webpack-dev-middleware": "^3.6.2"
   },
   "devDependencies": {},
