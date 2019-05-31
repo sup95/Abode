@@ -1,0 +1,24 @@
+{
+  "name": "abode",
+  "version": "1.0.0",
+  "description": "The Digital Abode",
+  "main": "index.js",
+  "dependencies": {
+    "webpack-dev-middleware": "^3.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sup95/Abode.git"
+  },
+  "author": "Supriya Srivatsa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sup95/Abode/issues"
+  },
+  "homepage": "https://github.com/sup95/Abode#readme"
+}
