@@ -38,11 +38,11 @@
                 Sometimes, I scribble poetry.
             </span>
 
-            <div class="bottomNavigationPane">
+            <!--div class="bottomNavigationPane">
                 <div><img :src="require('./assets/navigators/blog.png')" /></div>
                 <div><img :src="require('./assets/navigators/flag1.png')" /></div>
                 <div><img :src="require('./assets/navigators/poetry1.png')" height="40px" /></div>
-            </div>
+            </div-->
         </div>
     </div>
   </div>
@@ -50,14 +50,6 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-
-#right:hover{
-    width: 60%;
-}
-
-#right:hover ~ #left {
-    width: 40%;
-}
 
 .left {
   background-image: url("assets/SupriyaSrivatsa.jpg");
@@ -77,8 +69,6 @@
 .right {
   position: absolute;
   display: flex; 
-  /* background-color: aliceblue;
-  color: #008080; */
   background-color: white;
   color: #414a4c;
   right: 0px;
@@ -102,8 +92,7 @@
 #name  {
   font-size: 80px;
   font-weight: bold;
-  /* color: #006666; */
-  color: #353839;
+  color: #232b2b;
 }
 
 #landingContent {
@@ -128,18 +117,29 @@
   padding: 5px;
 }
 
-
-
 @media only screen and (max-width: 768px) {
-  /* For desktop: */
+  /* The portrait approach */
   .right {
       top: 100%;
       height: 100%;
-      width: 100%; }
+      width: 100%; 
+    }
    
   .left {
       height: 100%;
-      width: 100%; }
+      width: 100%; 
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  /* The landscape approach */
+  #right:hover{
+    width: 60%;
+  }
+
+  #right:hover ~ #left {
+    width: 40%;
+  }
 }
 
 </style>
