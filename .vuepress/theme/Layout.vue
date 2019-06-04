@@ -53,9 +53,9 @@
 
 .left {
   background-image: url("assets/SupriyaSrivatsa.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: white;
   position: absolute;
   display: block; 
@@ -120,26 +120,27 @@
 @media only screen and (max-width: 768px) {
   /* The portrait approach */
   .right {
-      top: 100%;
+      top: 50%;
       height: 100%;
       width: 100%; 
     }
    
   .left {
-      height: 100%;
-      width: 100%; 
+      height: 50%;
+      width: 100%;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
     }
 }
 
 @media only screen and (min-width: 768px) {
-  /* The landscape approach */
-  #right:hover{
-    width: 60%;
-  }
-
-  #right:hover ~ #left {
-    width: 40%;
+   /* The landscape approach */
+  .left {
+    -webkit-clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
   }
 }
+
+
 
 </style>
