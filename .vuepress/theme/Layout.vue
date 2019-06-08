@@ -76,6 +76,7 @@
   height: 100%;
   width: 55%;
   transition: width 1s;
+  overflow: auto;
 }
 
 #landingDiv {
@@ -97,6 +98,7 @@
 
 #landingContent {
   font-size: 23px;
+  padding-bottom: 10%;
 }
 
 .bottomNavigationPane   {
@@ -117,29 +119,56 @@
   padding: 5px;
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 560px) {
   /* The portrait approach */
   .right {
-      top: 50%;
-      height: 100%;
-      width: 100%; 
-    }
-   
+    top: 50%;
+    height: 100%;
+    width: 100%; 
+  }
   .left {
-      height: 50%;
-      width: 100%;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-    }
+    height: 50%;
+    width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  }
+  #name  {
+    font-size: 60px;
+  }
+  #landingContent {
+    font-size: 20px;
+  }
 }
 
-@media only screen and (min-width: 768px) {
-   /* The landscape approach */
+@media only screen and (min-width: 560px) {
+   /* A landscape approach */
   .left {
     -webkit-clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
   }
+  #name  {
+    font-size: 60px;
+  }
+  #landingContent {
+    font-size: 20px;
+  }
 }
+
+@media only screen and (min-width: 768px) {
+  /* A landscape approach */
+  .left {
+    -webkit-clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+  }
+  #name  {
+    font-size: 80px;
+  }
+  #landingContent {
+    font-size: 23px;
+  }
+} 
+
 
 
 
