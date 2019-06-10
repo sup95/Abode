@@ -38,11 +38,12 @@
                 Sometimes, I scribble poetry.
             </span>
 
-            <!--div class="bottomNavigationPane">
-                <div><img :src="require('./assets/navigators/blog.png')" /></div>
-                <div><img :src="require('./assets/navigators/flag1.png')" /></div>
-                <div><img :src="require('./assets/navigators/poetry1.png')" height="40px" /></div>
-            </div-->
+            <div class="bottomNavigationPane">
+                <a href="/blog/"><img :src="require('./assets/navigators/blog.png')" class="navImages" title="Blog"/></a>
+                <a href="/milestones/"><img :src="require('./assets/navigators/flag.png')" class="navImages" title="Milestones"/></a>
+                <a href="/art/"><img :src="require('./assets/navigators/poetry.png')" class="navImages" title="Art"/></a>
+                <a href="/reachout/"><img :src="require('./assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a>
+            </div>
         </div>
     </div>
   </div>
@@ -103,11 +104,11 @@
 
 .bottomNavigationPane   {
     align-items:center;
-    margin-bottom: 3%;
-    margin-top: 15%;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3%;
+    margin-top: 15%;
+    bottom: 0px;
 }
 
 .imgRow {
@@ -117,6 +118,10 @@
 .imgCol {
   justify-content: space-between;
   padding: 5px;
+}
+
+.navImages {
+  height: 26px;
 }
 
 
