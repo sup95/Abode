@@ -7,11 +7,11 @@ layout: BlogLanding
 
 <p class="header">
   <span class="date">June 6th, 2019</span><br/>
-  <a href="/blog/hackathons/">Acing Hackathons! &#128515; </a>
+  <a href="/blog/hackathons/" class="blogLink">Acing Hackathons! &#128515; </a>
 </p>
 <p class="header">
   <span class="date">March 24th, '2018</span><br/>
-  <a href="/blog/blockchain/">The Story Of Villagers, Marbles And Oh, A Blockchain!</a>
+  <a href="/blog/blockchain/" class="blogLink">The Story Of Villagers, Marbles And Oh, A Blockchain!</a>
 </p>
 
 <style>
@@ -26,16 +26,16 @@ layout: BlogLanding
   color: #a0a0a0;
   text-transform: uppercase;
 }
-a:link {
+a.blogLink:link {
   color: #414a4c;
   border-bottom: dashed 1px;
   text-decoration: none;
 }
-a:hover {
+a.blogLink:hover {
   color: #414a4c;
   border-bottom: dashed 2px;
 }
-a:visited {
+a.blogLink:visited {
   color: #414a4c;
 }
 </style>
