@@ -1,6 +1,6 @@
 <template>
     <div> 
-        <img class="img404" :src="require('./assets/image404.png')" />
+        <img class="img404" :src="require('../assets/imgUnderConstruction.png')" />
     </div>
 </template>
 
