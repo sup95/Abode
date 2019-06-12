@@ -11,38 +11,39 @@
                 <span class="imgRow">
                     <a href="https://twitter.com/SupriyaSrivatsa" target="_blank">
                         <span class = "imgCol">
-                            <img class="socialMediaImg" :src="require('./assets/social-networks/twitter.png')" />
+                            <img class="socialMediaImg" :src="require('../assets/social-networks/twitter.png')" />
                         </span>
                     </a>
                     <a href="https://github.com/sup95" target="_blank">
                         <span class = "imgCol">
-                            <img :src="require('./assets/social-networks/github.png')" />
+                            <img :src="require('../assets/social-networks/github.png')" />
                         </span>
                     </a>
                     <a href="https://stackoverflow.com/users/4233180/supriya" target="_blank">
                         <span class = "imgCol">
-                            <img :src="require('./assets/social-networks/so.png')" />
+                            <img :src="require('../assets/social-networks/so.png')" />
                         </span>
                     </a>
                     <a href="https://www.linkedin.com/in/supriya-srivatsa/" target="_blank">
                         <span class = "imgCol">
-                            <img :src="require('./assets/social-networks/linkedin.png')" />
+                            <img :src="require('../assets/social-networks/linkedin.png')" />
                         </span>
                     </a>
                 </span>
             </p>
             
-            <span id="landingContent">
+            <div id="landingContent">
                 I build, break and fix code. <br/>
                 I speak internationally on topics niche and intriguing. <br/>
                 Sometimes, I scribble poetry.
-            </span>
+            </div>
 
-            <!--div class="bottomNavigationPane">
-                <div><img :src="require('./assets/navigators/blog.png')" /></div>
-                <div><img :src="require('./assets/navigators/flag1.png')" /></div>
-                <div><img :src="require('./assets/navigators/poetry1.png')" height="40px" /></div>
-            </div-->
+            <div class="bottomNavigationPane">
+                <span><a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a></span>
+                <span><a href="/staytuned/"><img :src="require('../assets/navigators/flag.png')" class="navImages" title="Milestones"/></a></span>
+                <span><a href="/staytuned/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a></span>
+                <span><a href="/staytuned/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
+            </div>
         </div>
     </div>
   </div>
@@ -52,7 +53,7 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
 .left {
-  background-image: url("assets/SupriyaSrivatsa.jpg");
+  background-image: url("../assets/SupriyaSrivatsa.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -80,8 +81,12 @@
 }
 
 #landingDiv {
-  padding: 10%;
+  padding: 5%;
+  padding-left: 10%;
+  padding-top: 7%;
   font-family: 'PT Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 #landingHeader {
@@ -99,13 +104,10 @@
 #landingContent {
   font-size: 23px;
   padding-bottom: 10%;
+  flex-grow: 1;
 }
 
 .bottomNavigationPane   {
-    align-items:center;
-    margin-bottom: 3%;
-    margin-top: 15%;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -117,6 +119,10 @@
 .imgCol {
   justify-content: space-between;
   padding: 5px;
+}
+
+.navImages {
+  height: 26px;
 }
 
 
@@ -138,6 +144,10 @@
   }
   #landingContent {
     font-size: 20px;
+  }
+  #landingDiv {
+    padding-top: 5%;
+    padding-left: 10%;
   }
 }
 
@@ -168,8 +178,4 @@
     font-size: 23px;
   }
 } 
-
-
-
-
 </style>

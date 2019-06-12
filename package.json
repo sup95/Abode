@@ -4,13 +4,15 @@
   "description": "The Digital Abode",
   "main": "index.js",
   "dependencies": {
-    "vuepress": "^1.0.0-beta.1",
     "webpack-dev-middleware": "^3.6.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "vuepress": "^1.0.0-rc.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vuepress build"
+    "build": "vuepress build",
+    "dev": "vuepress dev"
   },
   "repository": {
     "type": "git",
