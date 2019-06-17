@@ -26,16 +26,4 @@ layout: BlogLanding
   color: #a0a0a0;
   text-transform: uppercase;
 }
-a.blogLink:link {
-  color: #414a4c;
-  border-bottom: dashed 1px;
-  text-decoration: none;
-}
-a.blogLink:hover {
-  color: #414a4c;
-  border-bottom: dashed 2px;
-}
-a.blogLink:visited {
-  color: #414a4c;
-}
 </style>

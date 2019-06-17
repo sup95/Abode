@@ -1,6 +1,6 @@
 module.exports = {
     head: [
-        ['link', { rel: 'icon', href: '/favicon.jpg' }]
+        ['link', { rel: 'icon', href: '/favicon.png' }]
     ],
     plugins: [
         [ 

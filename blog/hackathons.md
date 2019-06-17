@@ -23,7 +23,7 @@ I have won some hackathons and judged some others. If you are looking to partici
 
 2. **Technology for the hack:** If you have enough time to learn a new technology/language and use it for your product, and you feel that language/framework would be more suited than others, go for it. Otherwise, it is probably best to stick to what you are most comfortable with when faced with a time constraint.
 
-3. **Pitch:** Most hackathons require you to make a pitch, or a presentation to the judges. This is very very important. Do not underestimate the importance of having a good pitch. Having a good pitch is nearly as important as having a good product. You can have a great product but if you are not able to convince the judges, it is a moot point.
+3. **Pitch:** Most hackathons require you to make a pitch, or a presentation to the judges. This is very very important. Do not underestimate the importance of having a good pitch. Having a good pitch is nearly as important as having a good product. You can have a great product but if you are not able to convince the judges, it is a [*moo*](https://www.youtube.com/watch?v=iObtPBh3NXs&list=WL&index=38&t=0s) point. :P
 
 Try to always begin your pitch with something like a short story. Let me elaborate. Do not directly delve into the amazing features of your product. Not even the motivation behind the product. Open by saying something that helps the audience relate to the product. Put them in a scenario. Bring characters to life.
 
@@ -37,10 +37,3 @@ All said and done, the catch: Do not make it too long. Anywhere between 45-60 se
 The presentation must overall definitely touch upon motivation, target audience, the technology stack and of course a working demo of your product. The demo could even be a video. I find videos a really neat way to showcase your product.
 
 I hope you find this useful. Would love to hear feedback or help you out if you have any questions. :slightly_smiling_face:
-
-<style>
-    .metaData {
-        color: #7d7d7d;
-        text-transform: uppercase;
-    }
-</style>

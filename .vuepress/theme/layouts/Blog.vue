@@ -6,6 +6,7 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import '../styles/index.styl';
 
 .container{
   font-family: 'PT Sans', sans-serif;
