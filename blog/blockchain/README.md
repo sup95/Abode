@@ -32,7 +32,7 @@ Thus they ensured harmony at the magical village and lived happily ever after. �
 
 The final solution arrived at by the villagers in the story is what is called a blockchain. Blockchain is a digital, decentralized ledger which records all transactions chronologically and publicly. As can be observed from the story, blockchain offers immutability, transperancy and decentralization. It eliminates the need for middlemen. It can be said that blockchain offers “digital trust”.
 
-“Blockchain is to transaction what the Internet is to information.”
+> “Blockchain is to transaction what the Internet is to information.”
 
 On a very high level, a bunch of transactions are grouped together to form a “block”. Several such blocks are linked together to form a chain; hence block-chain.
 
@@ -41,9 +41,9 @@ The images below can help us understand better:
 <img src="./blockchain1.png" class="blogImg"/>
 <img src="./blockchain2.png" class="blogImg"/>
 
-When a node fraudulently tries to modify one of the previous records, the hash function of that block changes, and thus changes the hash of every other block on the chain. Thus, this transaction is deemed invalid and is not accepted onto the blockchain. This method of “accepting” blocks or transactions onto the blockchain is called consensus. There are different protocols used to establish this consensus, some being Proof of Work — the protocol used by Bitcoin, Proof of Stake, etc.
+When a node fraudulently tries to modify one of the previous records, the hash function of that block changes, and thus changes the hash of every other block on the chain. Thus, this transaction is deemed invalid and is not accepted onto the blockchain. This method of “accepting” blocks or transactions onto the blockchain is called consensus. There are different protocols used to establish this consensus, some being [Proof of Work](https://en.wikipedia.org/wiki/Proof_of_work) — the protocol used by Bitcoin, [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_stake), etc.
 
-Let us consider another very interesting problem that Blockchain solves — the Double Spending problem.
+Let us consider another very interesting problem that Blockchain solves — the [Double Spending](https://en.wikipedia.org/wiki/Double-spending) problem.
 
 In the story above, consider “digital marbles”, instead of just marbles. When I give you a marble, you have a marble and I don’t. That marble is yours. Consider the real world scenario with money. When I give you a hundred rupee note, the note is yours to spend. There is no way I can spend the same hundred rupees.
 
@@ -51,12 +51,12 @@ But think of the digital world. What if I made copies of the marble before lendi
 
 > “Blockchain is to Bitcoin, what the Internet is to email. A big electronic system on top of which you can build applications. Currency is just one.”
 
-I love this line. It rings so true. With RansomWare demanding Bitcoin, Bitcoin hitting an all-time high recently, etc. Bitcoin has become incredibly popular. However, Blockchain — the technology driving Bitcoin has tremendous scope beyond cryptocurrencies too.
+I love this line. It rings so true. With [RansomWare](https://en.wikipedia.org/wiki/Ransomware) demanding Bitcoin, Bitcoin hitting an all-time high recently, etc. Bitcoin has become incredibly popular. However, Blockchain — the technology driving Bitcoin has tremendous scope beyond cryptocurrencies too.
 
 Think of an election. What if you could really ensure “One man, one vote”? What if it was clearly evident and absolutely transparent that your votes on an election could never be rigged?
-Some countries have already begun to use blockchain for their elections. Sierra Leone was the first country to hold blockchain powered elections. (Link to news article.)
+Some countries have already begun to use blockchain for their elections. Sierra Leone was the first country to hold blockchain powered elections. ([Link to news article.](https://yourstory.com/2018/03/sierra-leone-blockchain-powered-elections/))
 
-What if you could truly own your identity? (UPort works on blockchain driven identity management.) Your data would not be stored on centralised servers prone to attacks, and only you would be in charge of your identity.
+What if you could truly own your identity? ([UPort](https://www.uport.me/) works on blockchain driven identity management.) Your data would not be stored on centralised servers prone to attacks, and only you would be in charge of your identity.
 
 A world where artists, researchers shall never be denied of their due credit because blockchain ensures a chain of ownership.
 
@@ -71,16 +71,3 @@ The image below is self-explanatory and beautifully summarises when you should g
 <img src="./blockchainflowdiagram.png" class="blogImg"/>
 
 When I first started exploring blockchain, it took me ages to ease into it. Probably because it seemed so unintuitive at first and so different than any other technology; probably because the technicalities dive deep into concepts of cryptography, hashing, networks, and more. I hope you find this article useful and is a good primer, or a new perspective on the technology.
-
-<style>
-.blogImg {
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.metaData {
-    color: #7d7d7d;
-    text-transform: uppercase;
-}
-</style>
