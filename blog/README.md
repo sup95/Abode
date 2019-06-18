@@ -7,11 +7,15 @@ layout: BlogLanding
 
 <p class="header">
   <span class="date">June 6th, 2019</span><br/>
-  <a href="/blog/hackathons/" class="blogLink">Acing Hackathons! &#128515; </a>
+  <a href="/blog/acing-hackathons/" class="blogLink">Acing Hackathons! &#128515; </a>
+</p>
+<p class="header">
+  <span class="date">June 5th, '2018</span><br/>
+  <a href="/blog/getting-your-hands-on-fantasy-data/" class="blogLink">Getting Your Hands On Fantasy Data 🏏</a>
 </p>
 <p class="header">
   <span class="date">March 24th, '2018</span><br/>
-  <a href="/blog/blockchain/" class="blogLink">The Story Of Villagers, Marbles And Oh, A Blockchain!</a>
+  <a href="/blog/the-story-of-villagers-marbles-and-oh-a-blockchain/" class="blogLink">The Story Of Villagers, Marbles And Oh, A Blockchain!</a>
 </p>
 
 <style>
