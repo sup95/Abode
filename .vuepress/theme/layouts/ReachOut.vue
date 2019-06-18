@@ -7,7 +7,7 @@
         <p>For any comments, questions, a discussion or just a hello - drop in a message! :)</p>
         <form name="reachout" method="POST" data-netlify="true">
             <div class="form-field">
-                <input id="name" name="name" type="text" placeholder="Name" required>
+                <input id="name" name="username" type="text" placeholder="Name" required>
             </div>
             <div class="form-field">
                 <input id="email" name="email" type="email" placeholder="Email" required>
