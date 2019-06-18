@@ -5,7 +5,7 @@
             Get In Touch!
         </h1>
         <p>For any comments, questions, a discussion or just a hello - drop in a message! :)</p>
-        <form name="reach-out" method="POST" data-netlify="true">
+        <form name="reachout" method="POST" data-netlify="true">
             <div class="form-field">
                 <input id="name" type="text" placeholder="Name" required>
             </div>
