@@ -1,5 +1,5 @@
 <template>
-    <div class="get-in-touch1">
+    <div class="get-in-touch">
         <h1>
             <!--img :src="require('../assets/navigators/reachout.png')" class="reachOutImg" title="Reach Out"/-->
             Get In Touch!
@@ -7,13 +7,13 @@
         <p>For any comments, questions, a discussion or just a hello - drop in a message! :)</p>
         <form name="reachout" method="POST" data-netlify="true">
             <div class="form-field">
-                <input id="name" type="text" placeholder="Name" required>
+                <input id="name" type="text" placeholder="Name">
             </div>
             <div class="form-field">
-                <input id="email" type="email" placeholder="Email" required>
+                <input id="email" type="email" placeholder="Email">
             </div>
             <div class="form-field">
-                <textarea id="message" placeholder="Message" required/>
+                <textarea id="message" placeholder="Message"/>
             </div>
             <div class="submit-field">
                 <input class="submit-btn" type="submit" value="Send">
@@ -26,15 +26,6 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
 .get-in-touch  {
-    font-family: 'PT Sans', sans-serif;
-    padding: 20px;
-    max-width: 550px;
-    width: 80%;
-    margin: 20px auto;
-    color: #353839;
-}
-
-.get-in-touch1  {
     font-family: 'PT Sans', sans-serif;
     display: block;
     margin-left: auto;
