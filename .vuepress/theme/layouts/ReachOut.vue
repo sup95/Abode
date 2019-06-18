@@ -7,13 +7,13 @@
         <p>For any comments, questions, a discussion or just a hello - drop in a message! :)</p>
         <form name="reachout" method="POST" data-netlify="true">
             <div class="form-field">
-                <input id="name" type="text" placeholder="Name">
+                <input id="name" name="name" type="text" placeholder="Name" required>
             </div>
             <div class="form-field">
-                <input id="email" type="email" placeholder="Email">
+                <input id="email" name="email" type="email" placeholder="Email" required>
             </div>
             <div class="form-field">
-                <textarea id="message" placeholder="Message"/>
+                <textarea id="message" name="message" placeholder="Message" required/>
             </div>
             <div class="submit-field">
                 <input class="submit-btn" type="submit" value="Send">
