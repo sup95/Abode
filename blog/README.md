@@ -6,6 +6,10 @@ layout: BlogLanding
 <br/>
 
 <p class="header">
+  <span class="date">June 20th, 2019</span><br/>
+  <a href="/blog/building-oppilo-my-own-ad-blocker/" class="blogLink">Building Oppilo - My Own Ad Blocker </a>
+</p>
+<p class="header">
   <span class="date">June 6th, 2019</span><br/>
   <a href="/blog/acing-hackathons/" class="blogLink">Acing Hackathons! &#128515; </a>
 </p>
