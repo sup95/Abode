@@ -2,10 +2,10 @@
     <div class="get-in-touch">
         <h1>
             <!--img :src="require('../assets/navigators/reachout.png')" class="reachOutImg" title="Reach Out"/-->
-            Get In Touch!
+            Get In Touch
         </h1>
         <p>For any comments, questions, a discussion or just a hello - drop in a message! :)</p>
-        <form name="reachout" method="POST" data-netlify="true">
+        <form name="reachout" method="POST" action="/reachout/success" netlify-honeypot="not-for-humans" data-netlify="true">
             <div class="form-field">
                 <input id="name" name="username" type="text" placeholder="Name">
             </div>
@@ -13,14 +13,30 @@
                 <input id="email" name="email" type="email" placeholder="Email">
             </div>
             <div class="form-field">
-                <textarea id="message" name="message" placeholder="Message"/>
+                <textarea id="message" name="message" placeholder="Message" @change="enableSend()"/>
             </div>
+            <input class="not-for-humans" name="not-for-humans" type="text">
             <div class="submit-field">
-                <input class="submit-btn" type="submit" value="Send">
+                <input class="submit-btn" id="sendBtn" type="submit" value="Send" disabled>
             </div>
         </form>
     </div>
 </template>
+
+<script>
+    export default {
+        methods: {
+            enableSend() {
+                if(document.getElementById("message").value==="") { 
+                    document.getElementById('sendBtn').disabled = true; 
+                } 
+                else { 
+                    document.getElementById('sendBtn').disabled = false;
+                }
+            }
+        }
+    }
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
@@ -75,7 +91,7 @@ textarea {
     font-family: 'PT Sans', sans-serif;
 }
 
-input[type=submit] {
+input[type=submit]:enabled {
     width: auto;
     background-color: #353839;
     border-radius: 4px;
@@ -88,5 +104,25 @@ input[type=submit] {
     text-transform: uppercase;
     font-size: 16px;
     font-family: 'PT Sans', sans-serif;
+}
+
+input[type=submit]:disabled {
+    width: auto;
+    background-color: #696969;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    margin: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+    cursor:not-allowed
+}
+
+.not-for-humans {
+    display: none;
 }
 </style>
