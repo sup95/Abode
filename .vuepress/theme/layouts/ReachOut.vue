@@ -13,7 +13,7 @@
                 <input id="email" name="email" type="email" placeholder="Email">
             </div>
             <div class="form-field">
-                <textarea id="message" name="message" placeholder="Message" @keyup="enableSend()"/>
+                <textarea id="message" name="message" placeholder="Message"/>
             </div>
             <input class="not-for-humans" name="not-for-humans" type="text">
             <div class="submit-field">
