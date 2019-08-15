@@ -17,7 +17,7 @@
             </div>
             <input class="not-for-humans" name="not-for-humans" type="text">
             <div class="submit-field">
-                <input class="submit-btn" id="sendBtn" type="submit" value="Send" disabled>
+                <input class="submit-btn" id="sendBtn" type="submit" value="Send">
             </div>
         </form>
     </div>
