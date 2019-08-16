@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="super-container">
     <div class="sidebar">
-      <a href="/"><img :src="require('../assets/SupriyaSrivatsa.jpg')" class="photoImg" title="Blog"/></a>
-      <a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a>
-      <a href="/milestones/"><img :src="require('../assets/navigators/flag.png')" class="navImages" title="Milestones"/></a>
-      <a href="/art/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a>
-      <a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a>
-      </div>
+      <span><a href="/"><img :src="require('../assets/SupriyaSrivatsa.jpg')" class="photoImg" title="Home"/></a></span>
+      <span><a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a></span>
+      <span><a href="/milestones/"><img :src="require('../assets/navigators/flag.png')" class="navImages" title="Milestones"/></a></span>
+      <span><a href="/art/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a></span>
+      <span><a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
+    </div>
     <div class="container">
       <Content/>
     </div>
@@ -17,6 +17,7 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
 .sidebar {
+  display: inline-block;
   margin: 0;
   padding: 0;
   width: 100px;
@@ -26,10 +27,9 @@
 }
 
 .sidebar a {
-  display: block;
-  color: black;
+  display: inline-flex;
+  justify-content: space-between;
   padding: 16px;
-  text-decoration: none;
 }
 
 .navImages {
@@ -57,8 +57,8 @@
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+  .sidebar a {float:none; vertical-align: middle;}
+  div.container {margin-left: 0;}
 }
 
 </style>
