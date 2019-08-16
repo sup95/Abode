@@ -3,7 +3,6 @@ layout: BlogLanding
 ---
 
 # Blog
-<br/>
 
 <p class="header">
   <span class="date">June 20th, 2019</span><br/>

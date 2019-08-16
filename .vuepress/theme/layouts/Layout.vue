@@ -34,7 +34,7 @@
             
             <div id="landingContent">
                 I build, break and fix code. <br/>
-                I speak internationally on topics niche and intriguing. <br/>
+                I speak internationally on niche and intriguing topics. <br/>
                 Sometimes, I scribble poetry.
             </div>
 
