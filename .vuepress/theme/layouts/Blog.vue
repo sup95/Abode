@@ -17,11 +17,10 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import '../styles/index.styl';
 
-
 .sidebar {
   margin: 0;
   padding: 0px;
-  width: 100px;
+  width: auto;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -54,7 +53,7 @@
   padding: 20px;
   max-width: 650px;
   width: 80%;
-  margin: 20px auto;
+  margin: 0px auto;
   color: #353839;
 }
 

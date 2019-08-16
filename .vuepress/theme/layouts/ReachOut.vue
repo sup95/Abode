@@ -139,7 +139,7 @@ input[type=submit]:disabled {
 .sidebar {
   margin: 0;
   padding: 0px;
-  width: 100px;
+  width: auto;
   position: fixed;
   height: 100%;
   overflow: auto;
