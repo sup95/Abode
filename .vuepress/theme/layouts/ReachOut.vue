@@ -1,4 +1,12 @@
 <template>
+    <div class="container">
+    <div class="sidebar">
+      <a href="/"><img :src="require('../assets/SupriyaSrivatsa.jpg')" class="photoImg" title="Home"/></a>
+      <a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a></span>
+      <a href="/milestones/"><img :src="require('../assets/navigators/flag.png')" class="navImages" title="Milestones"/></a></span>
+      <a href="/art/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a></span>
+      <a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
+    </div>
     <div class="get-in-touch">
         <h1>
             <!--img :src="require('../assets/navigators/reachout.png')" class="reachOutImg" title="Reach Out"/-->
@@ -20,6 +28,7 @@
                 <input class="submit-btn" id="sendBtn" type="submit" value="Send">
             </div>
         </form>
+    </div>
     </div>
 </template>
 
@@ -124,5 +133,49 @@ input[type=submit]:disabled {
 
 .not-for-humans {
     display: none;
+}
+
+
+.sidebar {
+  margin: 0;
+  padding: 0px;
+  width: 100px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar a {
+  padding: 10px;
+  margin: 20px 8px;
+}
+
+.navImages-active {
+  height: 36px;
+}
+
+.navImages {
+  height: 26px;
+}
+
+.photoImg {
+  height: 50px;
+  border-radius: 30%;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .sidebar a {align-content: center;}
+  div.container {margin-left: 0;}
 }
 </style>

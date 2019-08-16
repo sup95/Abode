@@ -1,11 +1,11 @@
 <template>
   <div class="super-container">
     <div class="sidebar">
-      <span><a href="/"><img :src="require('../assets/SupriyaSrivatsa.jpg')" class="photoImg" title="Home"/></a></span>
-      <span><a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a></span>
-      <span><a href="/milestones/"><img :src="require('../assets/navigators/flag.png')" class="navImages" title="Milestones"/></a></span>
-      <span><a href="/art/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a></span>
-      <span><a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
+      <a href="/"><img :src="require('../assets/SupriyaSrivatsa.jpg')" class="photoImg" title="Home"/></a>
+      <a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a></span>
+      <a href="/milestones/"><img :src="require('../assets/navigators/flag.png')" class="navImages" title="Milestones"/></a></span>
+      <a href="/art/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a></span>
+      <a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
     </div>
     <div class="container">
       <Content/>
@@ -17,19 +17,24 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
 .sidebar {
-  display: inline-block;
   margin: 0;
-  padding: 0;
-  width: 100px;
+  padding: 0px;
+  width: auto;
   position: fixed;
   height: 100%;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar a {
-  display: inline-flex;
-  justify-content: space-between;
-  padding: 16px;
+  padding: 10px;
+  margin: 20px 8px;
+}
+
+.navImages-active {
+  height: 36px;
 }
 
 .navImages {
@@ -47,7 +52,7 @@
   padding: 20px;
   max-width: 550px;
   width: 80%;
-  margin: 20px auto;
+  margin: 0px auto;
   color: #353839;
 }
 
@@ -56,8 +61,11 @@
     width: 100%;
     height: auto;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-  .sidebar a {float:none; vertical-align: middle;}
+  .sidebar a {align-content: center;}
   div.container {margin-left: 0;}
 }
 
