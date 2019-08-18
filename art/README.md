@@ -1,5 +1,5 @@
 ---
-layout: UnderConstruction
+layout: Art
 ---
 
 # Supriya Srivatsa
