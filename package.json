@@ -4,6 +4,8 @@
   "description": "The Digital Abode",
   "main": "index.js",
   "dependencies": {
+    "imagesloaded": "^4.1.4",
+    "masonry-layout": "^4.2.2",
     "webpack-dev-middleware": "^3.6.2"
   },
   "devDependencies": {

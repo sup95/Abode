@@ -66,7 +66,6 @@
     align-items: center;
   }
   .sidebar a {align-content: center;}
-  div.container {margin-left: 0;}
 }
 
 </style>
