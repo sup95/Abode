@@ -66,20 +66,21 @@
 import imagesLoaded from 'imagesloaded';
 export default {
     mounted () {
-      import('masonry-layout').then(Masonry => {
+      import('masonry-layout').then(m => {
         var grid = document.querySelector('.grid');
 
-        var msnry = new Masonry( grid, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        gutter: 8,
-        percentPosition: true
+        var msnry = new m.default( grid, {
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-sizer',
+          gutter: 8,
+          percentPosition: true
         });
 
         imagesLoaded( grid ).on( 'progress', function() {
             msnry.layout();
         });
-      });
+      })
+      .catch(err => console.log(err));
     }
 }
 </script>
