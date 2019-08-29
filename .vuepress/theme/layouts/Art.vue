@@ -63,10 +63,10 @@
 </template>
 
 <script>
-import Masonry from "masonry-layout";
-const imagesLoaded = require('imagesloaded');
+import imagesLoaded from 'imagesloaded';
 export default {
-    mounted: function() {
+    mounted () {
+      import('masonry-layout').then(Masonry => {
         var grid = document.querySelector('.grid');
 
         var msnry = new Masonry( grid, {
@@ -79,6 +79,7 @@ export default {
         imagesLoaded( grid ).on( 'progress', function() {
             msnry.layout();
         });
+      });
     }
 }
 </script>
