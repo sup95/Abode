@@ -5,7 +5,7 @@ tag:
   - Distributed Systems
 ---
 
-# Retry vs Circut Breaker
+# Retry vs Circuit Breaker
 <p class="metaData"> {{ $frontmatter.date }} </p>
 <br/>
 
