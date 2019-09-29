@@ -1,9 +1,11 @@
 ---
 layout: Blog
+date: June 20, 2019
+tag:
+  - Javascript
 ---
-
 # Building Oppilo - My Own Ad Blocker
-<p class="metaData"> June 20th, 2019 </p>
+<p class="metaData"> {{ $frontmatter.date }} </p>
 <br/>
 
 Ad-blockers work in two ways.

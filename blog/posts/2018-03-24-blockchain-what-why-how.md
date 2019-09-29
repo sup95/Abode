@@ -1,12 +1,15 @@
 ---
 layout: Blog
+date: March 24, 2018
+tag:
+  - blockchain
 ---
 
 # The Story Of Villagers, Marbles And Oh, A Blockchain!
-<p class="metaData"> March 24th, 2018 </p>
+<p class="metaData"> {{ $frontmatter.date }} </p>
 <br/>
 
-<img src="./blockchain.jpeg" class="blogImg"/>
+<img src="../assets/2018-03-24-blockchain-what-why-how/blockchain.jpeg" class="blogImg"/>
 
 Let’s hear a story. 🙂
 
@@ -38,8 +41,8 @@ On a very high level, a bunch of transactions are grouped together to form a “
 
 The images below can help us understand better:
 
-<img src="./blockchain1.png" class="blogImg"/>
-<img src="./blockchain2.png" class="blogImg"/>
+<img src="../assets/2018-03-24-blockchain-what-why-how/blockchain1.png" class="blogImg"/>
+<img src="../assets/2018-03-24-blockchain-what-why-how/blockchain2.png" class="blogImg"/>
 
 When a node fraudulently tries to modify one of the previous records, the hash function of that block changes, and thus changes the hash of every other block on the chain. Thus, this transaction is deemed invalid and is not accepted onto the blockchain. This method of “accepting” blocks or transactions onto the blockchain is called consensus. There are different protocols used to establish this consensus, some being [Proof of Work](https://en.wikipedia.org/wiki/Proof_of_work) — the protocol used by Bitcoin, [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_stake), etc.
 
@@ -68,6 +71,6 @@ Before I wrap up — there are lots of use cases that blockchain can solve a
 
 The image below is self-explanatory and beautifully summarises when you should go for a blockchain.
 
-<img src="./blockchainflowdiagram.png" class="blogImg"/>
+<img src="../assets/2018-03-24-blockchain-what-why-how/blockchainflowdiagram.png" class="blogImg"/>
 
 When I first started exploring blockchain, it took me ages to ease into it. Probably because it seemed so unintuitive at first and so different than any other technology; probably because the technicalities dive deep into concepts of cryptography, hashing, networks, and more. I hope you find this article useful and is a good primer, or a new perspective on the technology.

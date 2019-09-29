@@ -1,9 +1,12 @@
 ---
 layout: Blog
+date: June 6, 2019
+tag:
+  - Hackathon
 ---
 
 # Acing Hackathons! :)
-<p class="metaData"> June 6th, 2019 </p>
+<p class="metaData"> {{ $frontmatter.date }} </p>
 <br/>
 
 Hackathons are awesome. The rush to get a minimum viable product(MVP) working in the given time, creating a full fledged product from scratch - is amazing and involves lot of learning and fun.

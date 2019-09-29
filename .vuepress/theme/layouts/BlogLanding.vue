@@ -8,7 +8,18 @@
       <a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
     </div>
     <div class="container">
-      <Content/>
+
+      <h1> Blog </h1>
+
+      <p>
+        <ul v-for="page in $pagination.pages.sort((page1, page2) => page2.frontmatter.date - page1.frontmatter.date)">
+            <p class="header">
+            <span class="date">{{ page.frontmatter.date }}</span><br/>
+            <router-link class="blogLink" :to="page.path">{{ page.title }}</router-link>
+          </p>
+        </ul>
+      </p>
+
     </div>
   </div>
 </template>
@@ -55,6 +66,23 @@
   margin: 0px auto;
   color: #353839;
 }
+
+.header {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+.date {
+  font-weight: lighter;
+  font-size: 12px;
+  color: #a0a0a0;
+  text-transform: uppercase;
+}
+
+ul { 
+  list-style:none; 
+  padding-left:0; 
+} 
 
 @media screen and (max-width: 500px) {
   .sidebar {

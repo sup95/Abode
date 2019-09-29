@@ -1,12 +1,15 @@
 ---
 layout: Blog
+date: June 5, 2018
+tag:
+  - Python
 ---
 
 # Getting Your Hands On Fantasy Data 🏏
-<p class="metaData"> June 5th, 2018 </p>
+<p class="metaData"> {{ $frontmatter.date }} </p>
 <br/>
 
-<img src="./landingimg.gif" class="blogImg"/>
+<img src="../assets/2018-06-05-getting-your-hands-on-fantasy-data/landingimg.gif" class="blogImg"/>
 
 Come April and May, and the country is gripped with the IPL fever.
 What has gained amazing popularity in the recent past is Fantasy cricket. A friend of mine, an ardent Fantasy Cricket player and a huge fan of data science, decided to try leveraging data to pick the future players in the team. The only pain point was, of course — Data. Manually creating a dataset of the Bat, Bowl and Field scores of all players of both teams, is indeed too laborious.
@@ -17,11 +20,11 @@ My first instinct was to scrape it with some BeautifulSoup and Python. As I begu
 
 Here is a snapshot of my little Mind Map as I wrote the script, and pretty much summarises all I did!
 
-<img src="./mindmap.png" class="blogImg"/>
+<img src="../assets/2018-06-05-getting-your-hands-on-fantasy-data/mindmap.png" class="blogImg"/>
 
 To use the script, run it with the Fantasy League userid and password as command line arguments.
 
-<img src="./demo.png" class="blogImg"/>
+<img src="../assets/2018-06-05-getting-your-hands-on-fantasy-data/demo.png" class="blogImg"/>
 
 This generates an Excel file with the Bat, Bowl and Field scores of all players from both the participating teams.
 
