@@ -35,7 +35,7 @@ In distributed systems, failure is inevitable.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Life lesson from distributed systems: Failures are inevitable. ✨</p>&mdash; Supriya Srivatsa (@SupriyaSrivatsa) <a href="https://twitter.com/SupriyaSrivatsa/status/1177890110798348289?ref_src=twsrc%5Etfw">September 28, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Retry pattern is useful in scenarios of **transient failures**. What does this mean? Failures that are "temperory", lasting only for a short amount of time are transient. A momentary loss of network connectivity, a brief moment when the service goes down or is unresponsive and related timeouts are examples of transient failures.
+Retry pattern is useful in scenarios of **transient failures**. What does this mean? Failures that are "temporary", lasting only for a short amount of time are transient. A momentary loss of network connectivity, a brief moment when the service goes down or is unresponsive and related timeouts are examples of transient failures.
 
 As the failure is *transient*, *retrying* after some time could possibly give us the result needed!
 
@@ -64,7 +64,7 @@ The Circuit Breaker has three states:
 
 - **Closed**: Like the current is allowed to flow through in an electrical circuit breaker when closed, here, the request is allowed to flow through to the server. 
 
-    The circuit breaker maintains a count of failures. If the request that was allowed to pass through fails, the cicruit breaker increments the failure count. Once this failure count reaches a particular threshold in a given time period, the circuit breaker moves into the **open** state and starts a timer.
+    The circuit breaker maintains a count of failures. If the request that was allowed to pass through fails, the circuit breaker increments the failure count. Once this failure count reaches a particular threshold in a given time period, the circuit breaker moves into the **open** state and starts a timer.
 
     The purpose of the timer is to give some time to the system to heal before it starts receiving requests again. Once this timer expires, the circuit breaker moves to the **half-open** state.
 
@@ -74,7 +74,7 @@ The Circuit Breaker has three states:
 
     A limited number of requests are allowed to hit the server. If these fail again, the circuit breaker resets the timer and moves back into **open** state. If these requests succeed, the timer is reset and the circuit breaker is moved to **closed** state. 
 
-Following from our refrigerator anology and the technical details above, do you see that this is not about retry *vs* circuit breaker at all. This is about retry *and* circuit breaker. It is common and good practice to *combine* retry and cicruit breaker patterns to ensure that retries are made for transient faults, and instead of frequent bombarding, reasonable time is given for systems to repair/heal when the failures are relatively long lasting, and this is where circuit breaker comes to the rescue. : )
+Following from our refrigerator anology and the technical details above, do you see that this is not about retry *vs* circuit breaker at all. This is about retry *and* circuit breaker. It is common and good practice to *combine* retry and circuit breaker patterns to ensure that retries are made for transient faults, and instead of frequent bombarding, reasonable time is given for systems to repair/heal when the failures are relatively long lasting, and this is where circuit breaker comes to the rescue. : )
 
 To conclude, from the [Azure documentation](https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker), this is quite comprehensive:
 
