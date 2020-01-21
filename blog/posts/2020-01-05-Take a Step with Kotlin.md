@@ -1,37 +1,45 @@
 # Take A `Step` With Kotlin
 
+> This blog post is inspired by Anton Keks's amazing Kotlin Puzzlers [video](https://www.youtube.com/watch?v=_AM5VbPTKeg&list=PLQ176FUIyIUY6SKGl3Cj9yeYibBuRr3Hl&index=52) from KotlinConf '19. The blog post outlines the steps in my thought process while exploring and demystifying the Puzzlers.
+
+<br/>
+
+So, what would this code snippet output?
 ```kotlin
-for(i in 1..10 step 2 step 3) print("$i ")
+fun main() {
+    for(i in 1..10 step 2 step 3) print("$i ")
+}
 ```
 
-So, what would this output?
+Let's understand this, `step` by `step`. 🤭
 
-Let's dissect, `step` by `step`. 🤭
+---
 
-What if we only did `for(i in 1..10 step 2) print("$i “)`? 
+What would the output be if we did only a `step 2` in the loop, like this:
 
-The output is `1 3 5 7 9`. 
+```kotlin
+for(i in 1..10 step 2) print("$i ")
+```
 
-Great! So, `step` increments the “sequence”(or progression, technically) by the specified step count. 
+Unsurprisingly, this would output `1 3 5 7 9` - in the range `1..10`, we increment by *steps* of 2.
 
-So what happens when we have step 3 followed by step 2? Let's just run it and see.
+---
 
-The output is `1 4 7`. Okayy, how did that happen?
+So now coming back to our original question, what happens when we do `step 2 step 3`?
 
-I urge you to pause here and think how.
+To understand this, we first need to clearly understand what exactly happens behind the scenes when we do `1..10 step 2`. Let's just print this out - 
 
-With a little bit of analysis we can hypothesize that `step 2` returns `1 3 5 7 9`, and `step 3` builds *on that range* of 1 to 9 and increments with steps of 3, therefore `1 4 7`.
+```kotlin 
+fun main() {
+    println(1..10 step 2) //Output: 1..9 step 2
+}
+```
 
+Okay, that's a funny output, where did that come from? Let's dive deeper.
 
-To understand this clearly, we need to look at what actually happens under the hood with `step`.
+Let's navigate to Koltin source codes to inspect behavior.
 
-Try running 
-
-```println(1..10 step 2)```
-
-This returns `1..9 step 2`. Where did this come from?
-
-Let's use Intellij to navigate to `step`. This is how it looks like: 
+Navigating to `step` implementation (Cmd+B in IntelliJ), we see this is how it looks:
 
 ```kotlin
 public infix fun IntProgression.step(step: Int): IntProgression {
@@ -40,27 +48,52 @@ public infix fun IntProgression.step(step: Int): IntProgression {
 }
 ```
 
-Glaring from this code snippet at us is `IntProgression`. What's that? Navigating to IntProgression, we see that this is a class `start`, `endInclusive` and `step`. Scrolling down a bit, we see its `toString()` function. *This* method gives us what was printed when we ran ```println(1..10) step 2``` - string representation of `IntProgression`.
+Glaring at us from this code snippet is `IntProgression`. 
+Navigating to `IntProgression` implementation (Cmd+B in IntelliJ), we see that this is a class with `start`, `endInclusive` and `step` -
 
-So, now we know that `1..10 step 2` returns an `IntProgression` containing *start* 1, *endInclusive* 9 with a *step* of 2. Where in code does the `9` get computed?
+```kotlin
+public open class IntProgression
+    internal constructor
+        (
+                start: Int,
+                endInclusive: Int,
+                step: Int
+        )
+    ...
+```
 
-We see that a `first` and `last` are passed to `fromClosedRange`. With some quick navigation in Intellij, we can see that while `first` is the same as `start`, `last` is computed in `getProgressionLastElement` where `end - differenceModulo(end, start, step)` is used to find the `endInclusive` which can be achieved if we keep taking steps.
 
-<details>
-<summary>A byte of experimentation</summary>
+Scrolling down a bit, we see its `toString()` function:
 
-Here are some things that make me wonder if I'm right.
+```kotlin
+override fun toString(): String = if (step > 0) "$first..$last step $step" else "$first downTo $last step ${-step}"
+```
+*There we go!* *This* method is what leads to printing the not-so-funny-anymore `1..9 step 2` as output - string representation of `IntProgression` with values `start` -> 1, `endInclusive` -> 9 (computed in `fromClosedRange` -> `getProgressionLastElement`) and `step` 2.
 
-Looking once again at the `step` method from `IntProgression`, while there is an ssertion for `checkStepIsPositive`, we still do an `else -step` on the next line? Smells weird to me, and so says --speaker-- at --mins-- of the Koltin Puzzlers talk.
+Thus, to summarize `1..10 step 2` returns an `IntProgression`!
 
-Further, looking at `getProgressionLastElement` method which computes `last` too, we see a branch for negative step.
+---
 
-Next, while 1..10 prints 1.....
+Now that we've understood what happens behind the scenes of `step`, we are right on track to reason out the solution for the original question:
 
-once assertion is removed, everything seems to work just as it should, even downward range!
+```kotlin
+for(i in 1..10 step 2 step 3) print("$i ")
+```
 
---old link to why downward range was not chosen-- -> https://blog.jetbrains.com/kotlin/2013/02/ranges-reloaded/
+`1..10 step 2` returns an `IntProgression` in the range `1..9`.
 
-</details>
+Thus, we now actually boil down to a no puzzler and basically evaluate - 
+
+```kotlin
+for(i in 1..9 step 3) print("$i ")
+```
+
+And the output is surely,
+
+```
+1 4 7
+```
+
+Tada! 🎉
 
 
