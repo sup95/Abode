@@ -1,6 +1,14 @@
+---
+layout: Blog
+date: Jan 21, 2020
+tag:
+  - Kotlin
+---
 # Take A `Step` With Kotlin
+<p class="metaData"> {{ $frontmatter.date }} </p>
+<br/>
 
-> This blog post is inspired by Anton Keks's amazing Kotlin Puzzlers [video](https://www.youtube.com/watch?v=_AM5VbPTKeg&list=PLQ176FUIyIUY6SKGl3Cj9yeYibBuRr3Hl&index=52) from KotlinConf '19. The blog post outlines the steps in my thought process while exploring and demystifying the Puzzlers.
+> This blog post is inspired by Anton Keks's amazing Kotlin Puzzlers [talk](https://www.youtube.com/watch?v=_AM5VbPTKeg&list=PLQ176FUIyIUY6SKGl3Cj9yeYibBuRr3Hl&index=52) from KotlinConf '19. The blog post outlines the steps in my thought process while exploring and demystifying the Puzzlers.
 
 <br/>
 
@@ -49,6 +57,7 @@ public infix fun IntProgression.step(step: Int): IntProgression {
 ```
 
 Glaring at us from this code snippet is `IntProgression`. 
+
 Navigating to `IntProgression` implementation (Cmd+B in IntelliJ), we see that this is a class with `start`, `endInclusive` and `step` -
 
 ```kotlin
