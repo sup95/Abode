@@ -29,6 +29,11 @@
                             <img :src="require('../assets/social-networks/linkedin.png')" />
                         </span>
                     </a>
+                    <a href="https://www.instagram.com/supriyasrivatsa/" target="_blank">
+                        <span class = "imgCol">
+                            <img :src="require('../assets/social-networks/instagram.png')" />
+                        </span>
+                    </a>
                 </span>
             </p>
             
