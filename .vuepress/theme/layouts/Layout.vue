@@ -87,6 +87,7 @@
 }
 
 #landingDiv {
+  width: 100%;
   padding: 5%;
   padding-left: 10%;
   padding-top: 7%;
