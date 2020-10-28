@@ -38,9 +38,9 @@
             </p>
             
             <div id="landingContent">
-                I build, break and fix code. <br/>
-                I speak internationally on niche and intriguing topics. <br/>
-                Sometimes, I scribble poetry.
+                Engineer at Atlassian. I build, break and fix code. <br/>
+                I speak on niche and intriguing topics. <br/>
+                Sometimes, I colour, paint and scribble poetry.
             </div>
 
             <div class="bottomNavigationPane">
