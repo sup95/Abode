@@ -1,0 +1,66 @@
+<template>
+    <div class="container">
+        <div class="sidebar">
+        <a href="/"><img :src="require('../assets/SupriyaSrivatsa.jpg')" class="photoImg" title="Home"/></a>
+        <a href="/blog/"><img :src="require('../assets/navigators/blog.png')" class="navImages" title="Blog"/></a></span>
+        <a href="/bookshelf/"><img :src="require('../assets/navigators/reading.png')" class="navImages" title="Bookshelf"/></a></span>
+        <a href="/talks/"><img :src="require('../assets/navigators/mic.png')" class="navImages" title="Talks"/></a></span>
+        <a href="/art/"><img :src="require('../assets/navigators/poetry.png')" class="navImages" title="Art"/></a></span>
+        <a href="/reachout/"><img :src="require('../assets/navigators/reachout.png')" class="navImages" title="Reach Out"/></a></span>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+
+.sidebar {
+  margin: 0;
+  padding: 0px;
+  width: auto;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar a {
+  padding: 10px;
+  margin: 20px 8px;
+}
+
+.navImages-active {
+  height: 36px;
+}
+
+.navImages {
+  height: 26px;
+}
+
+.photoImg {
+  height: 50px;
+  border-radius: 30%;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .sidebar a {
+    align-content: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .goodreads-widget {
+    width: 85%;
+  }
+}
+</style>
