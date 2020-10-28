@@ -36,7 +36,7 @@
                 clear: both;
                 margin-bottom: 10px;
                 overflow: auto;
-                padding: 6px;
+                padding: 10px;
             }
             .gr_custom_book_container_1603564919 {
                 /* customize your book covers here */
