@@ -62,7 +62,7 @@
   font-family: 'PT Sans', sans-serif;
   text-align: justify;
   padding: 20px;
-  max-width: 550px;
+  max-width: 650px;
   width: 80%;
   margin: 0px auto;
   color: #353839;
