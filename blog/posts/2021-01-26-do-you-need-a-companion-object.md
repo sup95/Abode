@@ -72,7 +72,7 @@ package do_you_need_a_companion_object
 const val YAY = "yayie!"
 
 fun doDummyOperation() {
-    println("dummy operation success")
+    println("ta da!")
 }
 ```
 
