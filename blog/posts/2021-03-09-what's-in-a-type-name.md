@@ -4,15 +4,16 @@ date: March 9, 2021
 tag:
   - Kotlin
 ---
-# What's in a type name?
-# Understanding Kotlin typealias and named imports
+# What's in a type name: Kotlin Type Aliases and Named Imports
 <p class="metaData"> {{ $frontmatter.date }} </p>
+
+<img src="https://images.unsplash.com/photo-1518173184999-0381b5eb56d7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80" class="blogImg"/>
 
 When we begin reading code, we start forming a mental picture of the code. In our minds, we connect the dots to form a hazy picture of how the code is structured, how the code "flows", and what needs to be tweaked to fix a pestering bug. Names aid significantly in building this understanding, in forming this mental picture. Names are undervalued, names are important. Variable names are important, function names are important, and so are type names.
 
 In this article, we talk about types. Sometimes, types are complex enough to hinder readability, but not enough to warrant their own data class.
 
-Consider this example from the (awesome!) Kotlin docs - `MutableMap<K, MutableList<File>>`, or even something without generics like say - `MutableMap<String, Set<CupcakeReview>>` . Types like these are complex to read and hinder the forming of a mind map. Everytime you encounter the type, it makes you pause for a second, reassure yourself of everything the type represents, and then move on reading code. 
+Consider this example from the (awesome!) Kotlin docs - `MutableMap<K, MutableList<File>>`, or even something without generics like say - `MutableMap<String, Set<CupcakeReview>>` . Types like these are complex to read and hinder the forming of a mind map. Every time you encounter the type, it makes you pause for a second, reassure yourself of everything the type represents, and then move on reading code. 
 
 For cases just like this, we have Kotlin's `typealias` 🎉
 
@@ -170,7 +171,7 @@ fun mapCupcakeType(cupcakeType: DomainCupcakeType): CupcakeType {
 }
 ```
 
-Both typealias and named imports aid in readability. A key difference to remember between these is - a typealiased type can have its own scopes - it can be private/public/protected/internal. But a named import does not have scoping of its own, it is always file scoped.
+Both typealias and named imports aid in readability. A key difference to remember between these is - a type aliased type can have its own scopes - it can be private/public/protected/internal. But a named import does not have scoping of its own, it is always file scoped.
 
 <br/>
 
@@ -179,3 +180,7 @@ Both typealias and named imports aid in readability. A key difference to remembe
 <br/>
 
 Readability is important. Seemingly small language features like `typealias` and named imports can be huge blessings in a large or growing codebase. Understanding associated nuances helps us write elegant, expressive code we enjoy working with. :)
+
+<br/>
+
+_Also published on [Kotlin Turf](https://medium.com/kotlin-turf)_
