@@ -15,7 +15,7 @@
             <p class="header">
             <span class="event">DevConf, Cape Town and Pretoria </span></br>
             Monolith to Monolith
-            <span class="date">June '22</span></br>
+            <span class="date">June '23</span></br>
             </p>
 
             <div class="media">
