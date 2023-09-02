@@ -18,7 +18,7 @@
             <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb6575fe-811a-4a11-86b3-b8d63fc676fe_836x836.png" alt="Musing Mosaic">
         </div>
         <div class="blogtext">
-            <h1>Musing Mosaic</h1>
+            <h1><a href=" https://musingmosaic.substack.com?utm_source=navbar&utm_medium=web&r=23n7q">Musing Mosaic </a></h1>
             <h2>Weaving together product, engineering and design musings </h2>
         </div>
       </div>
@@ -98,16 +98,20 @@ ul {
 
 .blogbox {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
 .blogimage {
-    flex: 1;
+     flex: 1;
+     max-width: 250px;
+     text-align: center;
 }
 
 .blogtext {
-    flex: 2;
+    flex: 1;
     padding: 20px;
 }
 
@@ -121,6 +125,9 @@ ul {
     align-items: center;
   }
   .sidebar a {align-content: center;}
+  .blobbox {
+    flex-direction: column;
+  }
 }
 
 </style>
