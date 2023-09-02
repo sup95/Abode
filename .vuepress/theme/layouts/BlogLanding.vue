@@ -11,14 +11,27 @@
 
       <h1> Blog </h1>
 
-      <p>
+      <br/>
+      
+            <div class="mm">
+              <a style="text-decoration: none" href=" https://musingmosaic.substack.com?utm_source=navbar&utm_medium=web&r=23n7q">
+              <img class="mmimg" src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb6575fe-811a-4a11-86b3-b8d63fc676fe_836x836.png" alt="Musing Mosaic">
+              <div class="mmtext">
+                <p><a href=" https://musingmosaic.substack.com?utm_source=navbar&utm_medium=web&r=23n7q">Musing Mosaic </a></p>
+                <p>Weaving together product, engineering and design musings </p>
+              </div>
+              </a>
+            </div>
+      
+
+      <!--p>
         <ul v-for="page in $pagination.pages.sort((page1, page2) => page2.frontmatter.date - page1.frontmatter.date)">
             <p class="header">
             <span class="date">{{ page.frontmatter.date }}</span><br/>
             <router-link class="blogLink" :to="page.path">{{ page.title }}</router-link>
           </p>
         </ul>
-      </p>
+      </p-->
 
     </div>
   </div>
@@ -84,6 +97,24 @@ ul {
   padding-left:0; 
 } 
 
+.mm {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 15px;
+  height: 100px;
+}
+
+.mmimg {
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+
+.mmtext {
+  margin: 20px;
+  padding-left: 100px;
+}
+
 @media screen and (max-width: 500px) {
   .sidebar {
     width: 100%;
@@ -94,6 +125,9 @@ ul {
     align-items: center;
   }
   .sidebar a {align-content: center;}
+  .mm {
+    height: 180px;
+  }
 }
 
 </style>
