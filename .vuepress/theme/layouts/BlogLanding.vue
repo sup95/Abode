@@ -11,14 +11,26 @@
 
       <h1> Blog </h1>
 
-      <p>
+      https://musingmosaic.substack.com?utm_source=navbar&utm_medium=web&r=23n7q
+      
+      <div class="blogbox"
+        <div class="blogimage">
+            <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb6575fe-811a-4a11-86b3-b8d63fc676fe_836x836.png" alt="Musing Mosaic">
+        </div>
+        <div class="blogtext">
+            <h1>Musing Mosaic</h1>
+            <h2>Weaving together product, engineering and design musings </h2>
+        </div>
+      </div>
+
+      <!--p>
         <ul v-for="page in $pagination.pages.sort((page1, page2) => page2.frontmatter.date - page1.frontmatter.date)">
             <p class="header">
             <span class="date">{{ page.frontmatter.date }}</span><br/>
             <router-link class="blogLink" :to="page.path">{{ page.title }}</router-link>
           </p>
         </ul>
-      </p>
+      </p-->
 
     </div>
   </div>
@@ -83,6 +95,21 @@ ul {
   list-style:none; 
   padding-left:0; 
 } 
+
+.blogbox {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.blogimage {
+    flex: 1;
+}
+
+.blogtext {
+    flex: 2;
+    padding: 20px;
+}
 
 @media screen and (max-width: 500px) {
   .sidebar {
