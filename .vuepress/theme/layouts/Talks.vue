@@ -13,6 +13,43 @@
 
             <!-- talk -->
             <p class="header">
+            <span class="event">DevConf, Cape Town and Pretoria </span></br>
+            Monolith to Monolith
+            <span class="date">June '22</span></br>
+            </p>
+
+            <div class="media">
+                <div class="subdiv">
+                    <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.1972%;">
+                        <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/E2GNH4F9p6c?si=xNo5Rb8-VQwzr5o_" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <br/>
+            <hr class="hr">
+
+            <!-- talk -->
+            <p class="header">
+            <span class="event">LeadDev, London</span></br>
+            Why we are writing a monolith, not a microservice
+            <span class="date">June '22</span></br>
+            </p>
+
+            <div class="media">
+                <div class="subdiv">
+                    <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.1972%;">
+                        <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/BsvAk2Y5n4o?si=Uwigo63LADQWGEp0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <br/>
+            <hr class="hr">
+
+
+            <!-- talk -->
+            <p class="header">
             <span class="event">S/He Talks Tech, Bangalore</span></br>
             Forgotten Histories
             <span class="date">Feb '20</span></br>
