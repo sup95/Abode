@@ -36,15 +36,14 @@
     clear: both;
     margin-bottom: 10px;
     overflow: auto;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #aaa;
+    padding: 10px;
   }
   .gr_custom_book_container_1709894953 {
     /* customize your book covers here */
     overflow: hidden;
     height: 160px;
       float: left;
-      margin-right: 4px;
+      margin-right: 8px;
       width: 98px;
   }
   .gr_custom_author_1709894953 {
