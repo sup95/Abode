@@ -4,7 +4,7 @@
   --line: #b8b6a8;
   --text: #4f6368;
   --legacy-ink: #222;
-  font-family: 'Avenir Next', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Inter', 'Manrope', 'DM Sans', 'Poppins', 'Montserrat', 'Raleway', 'Nunito', 'Work Sans', 'Source Sans 3', 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -102,7 +102,11 @@ body.route-home {
 .hero-image-wrap {
   margin: 0;
   justify-self: center;
-  width: min(38vw, 560px);
+  width: 80%;
+  height: 80%;
+  max-width: 560px;
+  max-height: 80dvh;
+  min-height: 380px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: #dbe5de;
@@ -153,8 +157,11 @@ body.route-home {
 
   .hero-image-wrap {
     order: 1;
-    width: min(100%, 520px);
+    width: 80%;
+    height: auto;
+    max-width: 520px;
     max-height: 52dvh;
+    min-height: 300px;
   }
 
   .hero-name {

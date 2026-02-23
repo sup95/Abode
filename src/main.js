@@ -241,7 +241,7 @@ function homeTemplate() {
         <p class="hero-copy">
           I'm building theslowweb.net, slowly.<br/>
           I write at the Musing Mosaic and Lemon and Cinnamon.<br/>
-          Software engineer, avid reader, &lt;&gt;, &lt;&gt;
+          Software engineer, avid reader, dabbler in arts, constantly curious.
         </p>
       </section>
 
