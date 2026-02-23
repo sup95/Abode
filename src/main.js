@@ -1,33 +1,53 @@
-import './styles.css';
-
-import post20180324 from '../blog/posts/2018-03-24-blockchain-what-why-how.md?raw';
-import post20180605 from '../blog/posts/2018-06-05-getting-your-hands-on-fantasy-data.md?raw';
-import post20190606 from '../blog/posts/2019-06-06-acing-hackathons.md?raw';
-import post20190620 from '../blog/posts/2019-06-20-building-oppilo-my-own-ad-blocker.md?raw';
-import post20200105 from '../blog/posts/2020-01-05-Take a Step with Kotlin.md?raw';
-import post20210126 from '../blog/posts/2021-01-26-do-you-need-a-companion-object.md?raw';
-import post20210309 from "../blog/posts/2021-03-09-what's-in-a-type-name.md?raw";
-
-const postSources = [
-  { slug: 'blockchain-what-why-how', raw: post20180324 },
-  { slug: 'getting-your-hands-on-fantasy-data', raw: post20180605 },
-  { slug: 'acing-hackathons', raw: post20190606 },
-  { slug: 'building-oppilo-my-own-ad-blocker', raw: post20190620 },
-  { slug: 'take-a-step-with-kotlin', raw: post20200105 },
-  { slug: 'do-you-need-a-companion-object', raw: post20210126 },
-  { slug: 'whats-in-a-type-name', raw: post20210309 }
-].map((post) => ({ ...post, ...parsePost(post.raw) }))
-  .sort((a, b) => new Date(b.date) - new Date(a.date));
+const posts = [
+  {
+    slug: 'blockchain-what-why-how',
+    date: 'March 24, 2018',
+    path: '/blog/posts/2018-03-24-blockchain-what-why-how.md'
+  },
+  {
+    slug: 'getting-your-hands-on-fantasy-data',
+    date: 'June 5, 2018',
+    path: '/blog/posts/2018-06-05-getting-your-hands-on-fantasy-data.md'
+  },
+  {
+    slug: 'acing-hackathons',
+    date: 'June 6, 2019',
+    path: '/blog/posts/2019-06-06-acing-hackathons.md'
+  },
+  {
+    slug: 'building-oppilo-my-own-ad-blocker',
+    date: 'June 20, 2019',
+    path: '/blog/posts/2019-06-20-building-oppilo-my-own-ad-blocker.md'
+  },
+  {
+    slug: 'take-a-step-with-kotlin',
+    date: 'January 5, 2020',
+    path: '/blog/posts/2020-01-05-Take a Step with Kotlin.md'
+  },
+  {
+    slug: 'do-you-need-a-companion-object',
+    date: 'January 26, 2021',
+    path: '/blog/posts/2021-01-26-do-you-need-a-companion-object.md'
+  },
+  {
+    slug: 'whats-in-a-type-name',
+    date: 'March 9, 2021',
+    path: "/blog/posts/2021-03-09-what's-in-a-type-name.md"
+  }
+];
 
 const app = document.querySelector('#app');
-window.addEventListener('hashchange', render);
-render();
+window.addEventListener('hashchange', () => {
+  render().catch(showError);
+});
+
+render().catch(showError);
 
 function route() {
   return window.location.hash.replace('#/', '') || 'home';
 }
 
-function render() {
+async function render() {
   const currentRoute = route();
 
   if (currentRoute === 'home') {
@@ -36,14 +56,28 @@ function render() {
   }
 
   if (currentRoute === 'blog') {
-    app.innerHTML = blogTemplate(postSources);
+    const cards = await Promise.all(
+      posts
+        .slice()
+        .reverse()
+        .map(async (post) => ({ ...post, title: await postTitle(post.path) }))
+    );
+    app.innerHTML = blogTemplate(cards);
     return;
   }
 
   if (currentRoute.startsWith('blog/')) {
     const slug = currentRoute.split('/')[1];
-    const post = postSources.find((item) => item.slug === slug);
-    app.innerHTML = post ? postTemplate(post) : notFoundTemplate();
+    const post = posts.find((item) => item.slug === slug);
+
+    if (!post) {
+      app.innerHTML = notFoundTemplate();
+      return;
+    }
+
+    const raw = await loadMarkdown(post.path);
+    const parsed = parsePost(raw, post.date);
+    app.innerHTML = postTemplate(parsed);
     return;
   }
 
@@ -70,13 +104,33 @@ function render() {
   app.innerHTML = notFoundTemplate();
 }
 
-function parsePost(raw) {
+const titleCache = new Map();
+
+async function postTitle(path) {
+  if (titleCache.has(path)) {
+    return titleCache.get(path);
+  }
+
+  const raw = await loadMarkdown(path);
+  const title = raw.replace(/^---[\s\S]*?---\n?/, '').match(/^#\s+(.+)$/m)?.[1] ?? 'Untitled';
+  titleCache.set(path, title);
+  return title;
+}
+
+async function loadMarkdown(path) {
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${path} (${response.status})`);
+  }
+  return response.text();
+}
+
+function parsePost(raw, fallbackDate) {
   const frontmatterMatch = raw.match(/^---\n([\s\S]*?)\n---\n?/);
   const frontmatter = frontmatterMatch?.[1] ?? '';
-  const body = raw.replace(/^---[\s\S]*?---\n?/, '').replace(/\{\{\s*\$frontmatter\.date\s*\}\}/g, '');
-
+  const body = raw.replace(/^---[\s\S]*?---\n?/, '').replace(/\{\{\s*\$frontmatter\.date\s*\}\}/g, '').trim();
   const title = body.match(/^#\s+(.+)$/m)?.[1] ?? 'Untitled';
-  const date = frontmatter.match(/date:\s*(.+)/)?.[1] ?? 'Unknown';
+  const date = frontmatter.match(/date:\s*(.+)/)?.[1] ?? fallbackDate ?? 'Unknown';
 
   return {
     title,
@@ -106,18 +160,16 @@ function markdownToHtml(markdown) {
       result.push(`<h1>${line.slice(2)}</h1>`);
       continue;
     }
-
     if (line.startsWith('## ')) {
       result.push(`<h2>${line.slice(3)}</h2>`);
       continue;
     }
-
     if (line.startsWith('### ')) {
       result.push(`<h3>${line.slice(4)}</h3>`);
       continue;
     }
 
-    if (line.trim() === '<br/>' || line.trim() === '<br/>') {
+    if (line.trim() === '<br/>' || line.trim() === '<br>') {
       result.push('<br/>');
       continue;
     }
@@ -147,10 +199,7 @@ function formatInline(text) {
 }
 
 function escapeHtml(text) {
-  return text
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;');
+  return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
 function nav() {
@@ -178,12 +227,12 @@ function homeTemplate() {
   `;
 }
 
-function blogTemplate(posts) {
+function blogTemplate(blogPosts) {
   return `
     ${nav()}
     <main class="content">
       <h1>Blog</h1>
-      ${posts
+      ${blogPosts
         .map(
           (post) => `
             <article class="post-card">
@@ -236,4 +285,8 @@ function reachOutTemplate() {
 
 function notFoundTemplate() {
   return `${nav()}<main class="content"><h1>Page not found</h1></main>`;
+}
+
+function showError(error) {
+  app.innerHTML = `${nav()}<main class="content"><h1>Something went wrong</h1><pre>${escapeHtml(error.message)}</pre></main>`;
 }
