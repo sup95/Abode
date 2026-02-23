@@ -36,7 +36,9 @@ const posts = [
   }
 ];
 
+const LEGACY_PREFIX = 'legacy/';
 const app = document.querySelector('#app');
+
 window.addEventListener('hashchange', () => {
   render().catch(showError);
 });
@@ -49,13 +51,22 @@ function route() {
 
 async function render() {
   const currentRoute = route();
+  const isHomeRoute = currentRoute === 'home' || currentRoute === '';
+  document.body.classList.toggle('route-home', isHomeRoute);
 
-  if (currentRoute === 'home') {
+  if (isHomeRoute) {
     app.innerHTML = homeTemplate();
     return;
   }
 
-  if (currentRoute === 'blog') {
+  if (!currentRoute.startsWith(LEGACY_PREFIX)) {
+    app.innerHTML = notFoundTemplate();
+    return;
+  }
+
+  const legacyRoute = currentRoute.slice(LEGACY_PREFIX.length) || 'blog';
+
+  if (legacyRoute === 'blog') {
     const cards = await Promise.all(
       posts
         .slice()
@@ -66,8 +77,8 @@ async function render() {
     return;
   }
 
-  if (currentRoute.startsWith('blog/')) {
-    const slug = currentRoute.split('/')[1];
+  if (legacyRoute.startsWith('blog/')) {
+    const slug = legacyRoute.split('/')[1];
     const post = posts.find((item) => item.slug === slug);
 
     if (!post) {
@@ -81,22 +92,22 @@ async function render() {
     return;
   }
 
-  if (currentRoute === 'bookshelf') {
+  if (legacyRoute === 'bookshelf') {
     app.innerHTML = contentTemplate('Bookshelf', 'A curated list of reading recommendations is coming soon.');
     return;
   }
 
-  if (currentRoute === 'talks') {
+  if (legacyRoute === 'talks') {
     app.innerHTML = contentTemplate('Talks', 'Talks and decks will be published here.');
     return;
   }
 
-  if (currentRoute === 'art') {
+  if (legacyRoute === 'art') {
     app.innerHTML = contentTemplate('Art', 'Artwork and poetry will live on this page.');
     return;
   }
 
-  if (currentRoute === 'reachout') {
+  if (legacyRoute === 'reachout') {
     app.innerHTML = reachOutTemplate();
     return;
   }
@@ -202,41 +213,55 @@ function escapeHtml(text) {
   return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
-function nav() {
+function legacyNav() {
   return `
     <nav class="nav">
       <a href="#/home">Home</a>
-      <a href="#/blog">Blog</a>
-      <a href="#/bookshelf">Bookshelf</a>
-      <a href="#/talks">Talks</a>
-      <a href="#/art">Art</a>
-      <a href="#/reachout">Reach Out</a>
+      <a href="#/legacy/blog">Blog</a>
+      <a href="#/legacy/bookshelf">Bookshelf</a>
+      <a href="#/legacy/talks">Talks</a>
+      <a href="#/legacy/art">Art</a>
+      <a href="#/legacy/reachout">Reach Out</a>
     </nav>
   `;
 }
 
 function homeTemplate() {
   return `
-    ${nav()}
-    <main class="home">
-      <img src="/assets/SupriyaSrivatsa.jpg" alt="Supriya Srivatsa" class="profile"/>
-      <h1>Hi, I'm Supriya Srivatsa</h1>
-      <p>Engineer at Atlassian. I build, break and fix code.</p>
-      <p>I speak on niche and intriguing topics. Sometimes, I colour, paint and scribble poetry.</p>
+    <main class="hero-shell" aria-label="Supriya Srivatsa home">
+      <div class="hero-gridline hero-gridline-v-left"></div>
+      <div class="hero-gridline hero-gridline-v-right"></div>
+      <div class="hero-gridline hero-gridline-h-top"></div>
+      <div class="hero-gridline hero-gridline-h-mid"></div>
+      <div class="hero-gridline hero-gridline-h-bottom"></div>
+
+      <section class="hero-content">
+        <p class="hero-kicker">Hi! I'm</p>
+        <h1 class="hero-name">SUPRIYA<br/>SRIVATSA</h1>
+        <p class="hero-copy">
+          I'm building theslowweb.net, slowly.<br/>
+          I write at the Musing Mosaic and Lemon and Cinnamon.<br/>
+          Software engineer, avid reader, &lt;&gt;, &lt;&gt;
+        </p>
+      </section>
+
+      <figure class="hero-image-wrap">
+        <img src="/public/assets/SupriyaSrivatsa.jpg" alt="Supriya Srivatsa by the sea" class="hero-image" />
+      </figure>
     </main>
   `;
 }
 
 function blogTemplate(blogPosts) {
   return `
-    ${nav()}
+    ${legacyNav()}
     <main class="content">
       <h1>Blog</h1>
       ${blogPosts
         .map(
           (post) => `
             <article class="post-card">
-              <h2><a href="#/blog/${post.slug}">${post.title}</a></h2>
+              <h2><a href="#/legacy/blog/${post.slug}">${post.title}</a></h2>
               <p class="muted">${post.date}</p>
             </article>
           `
@@ -248,9 +273,9 @@ function blogTemplate(blogPosts) {
 
 function postTemplate(post) {
   return `
-    ${nav()}
+    ${legacyNav()}
     <main class="content post">
-      <a href="#/blog">← Back to blog</a>
+      <a href="#/legacy/blog">← Back to blog</a>
       <p class="muted">${post.date}</p>
       ${post.html}
     </main>
@@ -259,7 +284,7 @@ function postTemplate(post) {
 
 function contentTemplate(title, message) {
   return `
-    ${nav()}
+    ${legacyNav()}
     <main class="content">
       <h1>${title}</h1>
       <p>${message}</p>
@@ -269,7 +294,7 @@ function contentTemplate(title, message) {
 
 function reachOutTemplate() {
   return `
-    ${nav()}
+    ${legacyNav()}
     <main class="content">
       <h1>Get in touch</h1>
       <p>For comments, questions, discussion, or just a hello, drop a message below.</p>
@@ -284,9 +309,9 @@ function reachOutTemplate() {
 }
 
 function notFoundTemplate() {
-  return `${nav()}<main class="content"><h1>Page not found</h1></main>`;
+  return `${legacyNav()}<main class="content"><h1>Page not found</h1><p>Try <a href="#/home">home</a> or <a href="#/legacy/blog">legacy blog</a>.</p></main>`;
 }
 
 function showError(error) {
-  app.innerHTML = `${nav()}<main class="content"><h1>Something went wrong</h1><pre>${escapeHtml(error.message)}</pre></main>`;
+  app.innerHTML = `${legacyNav()}<main class="content"><h1>Something went wrong</h1><pre>${escapeHtml(error.message)}</pre></main>`;
 }

@@ -29,3 +29,8 @@ bun run preview
 - `src/styles.css` – global styles
 - `blog/posts/*.md` – markdown blog source files rendered in the app
 - `public/assets` – static assets/icons/images
+
+## Routes
+
+- `#/home` - new responsive homepage
+- Legacy pages are available under `#/legacy/*` (for example `#/legacy/blog`, `#/legacy/reachout`).
