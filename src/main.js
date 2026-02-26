@@ -229,24 +229,25 @@ function legacyNav() {
 function homeTemplate() {
   return `
     <main class="hero-shell" aria-label="Supriya Srivatsa home">
-      <div class="hero-gridline hero-gridline-v-left"></div>
+      <!--div class="hero-gridline hero-gridline-v-left"></div>
       <div class="hero-gridline hero-gridline-v-right"></div>
       <div class="hero-gridline hero-gridline-h-top"></div>
-      <div class="hero-gridline hero-gridline-h-mid"></div>
-      <div class="hero-gridline hero-gridline-h-bottom"></div>
+      <div class="hero-gridline hero-gridline-h-bottom"></div>-->
 
       <section class="hero-content">
         <p class="hero-kicker">Hi! I'm</p>
         <h1 class="hero-name">SUPRIYA<br/>SRIVATSA</h1>
+        <br/>
         <p class="hero-copy">
-          I'm building theslowweb.net, slowly.<br/>
+          I'm building The Slow Web, slowly.<br/>
           I write at the Musing Mosaic and Lemon and Cinnamon.<br/>
-          Software engineer, avid reader, dabbler in arts, constantly curious.
+          Software engineer at ____, I speak at tech conferences on niche and intriguing topics. <br/>
+          I'm an avid reader, fond of travel, solitude and meditative arts.
         </p>
       </section>
 
       <figure class="hero-image-wrap">
-        <img src="/public/assets/SupriyaSrivatsa.jpg" alt="Supriya Srivatsa by the sea" class="hero-image" />
+        <img src="/public/assets/supriya_srivatsa_image.jpg" alt="Supriya Srivatsa by the sea" class="hero-image" />
       </figure>
     </main>
   `;
@@ -258,15 +259,15 @@ function blogTemplate(blogPosts) {
     <main class="content">
       <h1>Blog</h1>
       ${blogPosts
-        .map(
-          (post) => `
+      .map(
+        (post) => `
             <article class="post-card">
               <h2><a href="#/legacy/blog/${post.slug}">${post.title}</a></h2>
               <p class="muted">${post.date}</p>
             </article>
           `
-        )
-        .join('')}
+      )
+      .join('')}
     </main>
   `;
 }

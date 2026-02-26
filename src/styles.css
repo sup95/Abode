@@ -1,5 +1,5 @@
 :root {
-  --bg: #f6f4ef;
+  --bg: #f4efe5;
   --ink: #5d818a;
   --line: #b8b6a8;
   --text: #4f6368;
@@ -8,7 +8,9 @@
   line-height: 1.6;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -18,6 +20,7 @@ body {
 
 body.route-home {
   overflow-x: hidden;
+  font-family: "Federo", sans-serif;
 }
 
 .hero-shell {
@@ -54,17 +57,20 @@ body.route-home {
 }
 
 .hero-gridline-h-top,
-.hero-gridline-h-mid,
 .hero-gridline-h-bottom {
-  left: clamp(1rem, 4.5vw, 4rem);
-  right: clamp(1rem, 4.5vw, 4rem);
+  left: 0;
+  right: 0;
   height: 1px;
   background: var(--line);
 }
 
-.hero-gridline-h-top { top: 34%; }
-.hero-gridline-h-mid { top: 50%; }
-.hero-gridline-h-bottom { top: 82%; }
+.hero-gridline-h-top {
+  top: 20%;
+}
+
+.hero-gridline-h-bottom {
+  top: 85%;
+}
 
 .hero-content,
 .hero-image-wrap {
@@ -78,23 +84,26 @@ body.route-home {
 }
 
 .hero-kicker {
+  font-family: "Poiret One", sans-serif;
   margin: 0 0 0.8rem;
   font-size: clamp(1.4rem, 1.8vw, 2.2rem);
   color: var(--text);
 }
 
 .hero-name {
+  font-family: "Limelight", sans-serif;
   margin: 0;
   color: var(--ink);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   line-height: 0.95;
-  font-size: clamp(3rem, 8.5vw, 9.2rem);
+  font-size: clamp(3rem, 7.5vw, 9.2rem);
 }
 
 .hero-copy {
+  font-family: "Poiret One", sans-serif;
   margin: clamp(1rem, 4vh, 3rem) 0 0;
-  max-width: 36ch;
+  max-width: 44ch;
   font-size: clamp(1rem, 1.7vw, 2.9rem);
   line-height: 1.2;
 }
@@ -102,20 +111,20 @@ body.route-home {
 .hero-image-wrap {
   margin: 0;
   justify-self: center;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   max-width: 560px;
-  max-height: 80dvh;
+  max-height: 75dvh;
   min-height: 380px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: #dbe5de;
+  /* background: #dbe5de; */
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -132,7 +141,8 @@ body.route-home {
   }
 }
 
-@media (max-width: 980px), (orientation: portrait) {
+@media (max-width: 980px),
+(orientation: portrait) {
   .hero-shell {
     grid-template-columns: 1fr;
     align-content: center;
@@ -140,8 +150,7 @@ body.route-home {
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
   }
 
-  .hero-gridline-h-top,
-  .hero-gridline-h-mid {
+  .hero-gridline-h-top {
     display: none;
   }
 
@@ -201,9 +210,13 @@ body.route-home {
   margin-bottom: 1rem;
 }
 
-.muted { color: #666; }
+.muted {
+  color: #666;
+}
 
-.post img { max-width: 100%; }
+.post img {
+  max-width: 100%;
+}
 
 pre {
   background: #f6f6f6;
