@@ -24,13 +24,15 @@ bun run preview
 
 ## Project structure
 
-- `index.html` – app shell
-- `src/main.js` – hash-router + page rendering logic
-- `src/styles.css` – global styles
-- `blog/posts/*.md` – markdown blog source files rendered in the app
-- `public/assets` – static assets/icons/images
+- `index.html` - app shell
+- `src/main.js` - pathname router + page rendering logic
+- `src/templates/*.html` - route-specific HTML templates
+- `src/styles.css` - global styles
+- `bookshelf/README.md` - source content area for the bookshelf section
+- `blog/posts/*.md` - archived markdown files kept in the repository
+- `public/assets` - static assets/icons/images
 
 ## Routes
 
-- `#/home` - new responsive homepage
-- Legacy pages are available under `#/legacy/*` (for example `#/legacy/blog`, `#/legacy/reachout`).
+- `/` - responsive homepage
+- `/bookshelf` - bookshelf page

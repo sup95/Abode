@@ -3,7 +3,6 @@
   --ink: #5d818a;
   --line: #b8b6a8;
   --text: #4f6368;
-  --legacy-ink: #222;
   font-family: 'Inter', 'Manrope', 'DM Sans', 'Poppins', 'Montserrat', 'Raleway', 'Nunito', 'Work Sans', 'Source Sans 3', 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
   line-height: 1.6;
 }
@@ -117,8 +116,8 @@ body.route-home {
 
 .hero-copy a:hover,
 .hero-copy a:focus-visible {
-  color: #B7410E;
-  text-decoration-color: #B7410E;
+  color: #b7410e;
+  text-decoration-color: #b7410e;
 }
 
 .hero-image-wrap {
@@ -131,7 +130,6 @@ body.route-home {
   min-height: 380px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  /* background: #dbe5de; */
 }
 
 .hero-image {
@@ -195,56 +193,20 @@ body.route-home {
   }
 }
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #e7e7e7;
-  position: sticky;
-  top: 0;
-  background: white;
-}
-
-.nav a {
-  color: var(--legacy-ink);
-  text-decoration: none;
-}
-
 .content {
   max-width: 860px;
   margin: 2rem auto;
   padding: 0 1rem;
   color: #222;
+  font-family: "Poiret One", sans-serif;
 }
 
-.post-card {
-  border-bottom: 1px solid #efefef;
-  margin-bottom: 1rem;
+.content a,
+.content a:visited {
+  color: inherit;
 }
 
-.muted {
-  color: #666;
-}
-
-.post img {
-  max-width: 100%;
-}
-
-pre {
-  background: #f6f6f6;
-  padding: 1rem;
-  overflow: auto;
-}
-
-.reachout-form {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.reachout-form input,
-.reachout-form textarea,
-.reachout-form button {
-  font: inherit;
-  padding: 0.7rem;
+.content a:hover,
+.content a:focus-visible {
+  color: #b7410e;
 }
