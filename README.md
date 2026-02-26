@@ -4,7 +4,7 @@ Personal site for Supriya Srivatsa, refactored to a vanilla HTML/CSS/JavaScript 
 
 ## Stack
 
-- Vanilla HTML, CSS, JavaScript (no framework)
+- Vanilla HTML + CSS
 - Vite for local dev/build
 - Bun for package management and script running
 
@@ -24,13 +24,14 @@ bun run preview
 
 ## Project structure
 
-- `index.html` - app shell
-- `src/main.js` - pathname router + page rendering logic
-- `public/templates/*.html` - route-specific HTML templates
+- `index.html` - homepage
+- `bookshelf.html` - bookshelf page
 - `src/styles.css` - global styles
+- `vite.config.js` - multi-page build inputs
 - `bookshelf/README.md` - source content area for the bookshelf section
 - `blog/posts/*.md` - archived markdown files kept in the repository
 - `public/assets` - static assets/icons/images
+- `public/_redirects` - Netlify route mapping (`/bookshelf` to `/bookshelf.html`)
 
 ## Routes
 
