@@ -108,6 +108,19 @@ body.route-home {
   line-height: 1.2;
 }
 
+.hero-copy a,
+.hero-copy a:visited {
+  color: inherit;
+  text-decoration-style: dotted;
+  text-decoration-color: currentColor;
+}
+
+.hero-copy a:hover,
+.hero-copy a:focus-visible {
+  color: #B7410E;
+  text-decoration-color: #B7410E;
+}
+
 .hero-image-wrap {
   margin: 0;
   justify-self: center;

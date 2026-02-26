@@ -239,8 +239,8 @@ function homeTemplate() {
         <h1 class="hero-name">SUPRIYA<br/>SRIVATSA</h1>
         <br/>
         <p class="hero-copy">
-          I'm building The Slow Web, slowly.<br/>
-          I write at the Musing Mosaic and Lemon and Cinnamon.<br/>
+          I'm building <a href="https://theslowweb.net/" target="_blank" rel="noopener noreferrer">The Slow Web</a>, slowly.<br/>
+          I write at the <a href="https://musingmosaic.substack.com/" target="_blank" rel="noopener noreferrer">Musing Mosaic</a> and <a href="https://lemonandcinnamon.substack.com/" target="_blank" rel="noopener noreferrer">Lemon and Cinnamon</a>.<br/>
           Software engineer at ____, I speak at tech conferences on niche and intriguing topics. <br/>
           I'm an avid reader, fond of travel, solitude and meditative arts.
         </p>
