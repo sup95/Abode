@@ -26,7 +26,7 @@ bun run preview
 
 - `index.html` - app shell
 - `src/main.js` - pathname router + page rendering logic
-- `src/templates/*.html` - route-specific HTML templates
+- `public/templates/*.html` - route-specific HTML templates
 - `src/styles.css` - global styles
 - `bookshelf/README.md` - source content area for the bookshelf section
 - `blog/posts/*.md` - archived markdown files kept in the repository

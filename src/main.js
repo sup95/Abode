@@ -1,17 +1,22 @@
-import homeTemplate from './templates/home.html?raw';
-import bookshelfTemplate from './templates/bookshelf.html?raw';
-import notFoundTemplate from './templates/not-found.html?raw';
-
 const ROUTES = {
   HOME: '/',
   BOOKSHELF: '/bookshelf'
 };
 
-const app = document.querySelector('#app');
+const TEMPLATE_PATHS = {
+  HOME: '/templates/home.html',
+  BOOKSHELF: '/templates/bookshelf.html',
+  NOT_FOUND: '/templates/not-found.html'
+};
 
-window.addEventListener('popstate', render);
+const app = document.querySelector('#app');
+const templateCache = new Map();
+
+window.addEventListener('popstate', () => {
+  render().catch(showRenderError);
+});
 document.addEventListener('click', handleNavigation);
-render();
+render().catch(showRenderError);
 
 function normalizePath(pathname) {
   const trimmed = pathname.replace(/\/+$/, '');
@@ -28,7 +33,7 @@ function navigate(pathname) {
     return;
   }
   window.history.pushState({}, '', nextPath);
-  render();
+  render().catch(showRenderError);
 }
 
 function handleNavigation(event) {
@@ -63,7 +68,7 @@ function handleNavigation(event) {
   navigate(route);
 }
 
-function render() {
+async function render() {
   const currentRoute = getRoute();
   const isHomeRoute = currentRoute === ROUTES.HOME;
 
@@ -71,14 +76,45 @@ function render() {
   document.body.classList.toggle('route-bookshelf', currentRoute === ROUTES.BOOKSHELF);
 
   if (isHomeRoute) {
-    app.innerHTML = homeTemplate;
+    app.innerHTML = await getTemplate(TEMPLATE_PATHS.HOME);
     return;
   }
 
   if (currentRoute === ROUTES.BOOKSHELF) {
-    app.innerHTML = bookshelfTemplate;
+    app.innerHTML = await getTemplate(TEMPLATE_PATHS.BOOKSHELF);
     return;
   }
 
-  app.innerHTML = notFoundTemplate;
+  app.innerHTML = await getTemplate(TEMPLATE_PATHS.NOT_FOUND);
+}
+
+async function getTemplate(path) {
+  if (templateCache.has(path)) {
+    return templateCache.get(path);
+  }
+
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`Failed to load template: ${path} (${response.status})`);
+  }
+
+  const html = await response.text();
+  templateCache.set(path, html);
+  return html;
+}
+
+function showRenderError(error) {
+  app.innerHTML = `
+    <main class="content">
+      <h1>Something went wrong</h1>
+      <p>${escapeHtml(error.message)}</p>
+    </main>
+  `;
+}
+
+function escapeHtml(text) {
+  return text
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;');
 }
