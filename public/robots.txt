@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://supriyasrivatsa.com/sitemap.xml
-Host: https://supriyasrivatsa.com
+Sitemap: https://www.supriyasrivatsa.com/sitemap.xml
