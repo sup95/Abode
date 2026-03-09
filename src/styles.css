@@ -123,21 +123,72 @@ body.route-home {
 .hero-image-wrap {
   margin: 0;
   justify-self: center;
-  width: 100%;
+  width: auto;
   height: 100%;
   max-width: 560px;
   max-height: 75dvh;
   min-height: 380px;
   aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+}
+
+.hero-image-frame {
+  position: relative;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  display: inline-block;
   overflow: hidden;
 }
 
 .hero-image {
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-width: 100%;
   object-fit: contain;
   object-position: center;
   display: block;
+}
+
+.hero-socials {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.hero-social-square {
+  width: clamp(1.75rem, 3.4vw, 2.15rem);
+  height: clamp(1.75rem, 3.4vw, 2.15rem);
+  background: rgba(255, 255, 255, 0.45);
+  opacity: 0.67;
+  display: grid;
+  place-items: center;
+  color: #C5663E;
+  text-decoration: none;
+}
+
+.hero-social-icon {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-social-icon path,
+.hero-social-icon circle,
+.hero-social-icon rect {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.hero-social-square:hover,
+.hero-social-square:focus-visible,
+.hero-social-square:active {
+  color: #5d818a;
 }
 
 @media (orientation: landscape) {
@@ -182,6 +233,21 @@ body.route-home {
     max-width: 520px;
     max-height: 52dvh;
     min-height: 300px;
+  }
+
+  .hero-image-frame {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero-socials {
+    flex-direction: column;
   }
 
   .hero-name {
