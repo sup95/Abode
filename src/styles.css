@@ -233,6 +233,7 @@ body.route-home {
     order: 1;
     width: 80%;
     height: auto;
+    margin-top: clamp(0.75rem, 2.2vh, 1.5rem);
     max-width: 520px;
     max-height: 52dvh;
     min-height: 300px;
