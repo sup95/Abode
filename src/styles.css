@@ -165,7 +165,7 @@ body.route-home {
   height: clamp(1.75rem, 3.4vw, 2.15rem);
   background: rgba(255, 255, 255, 0.45);
   padding: 2px;
-  opacity: 0.67;
+  opacity: 0.78;
   display: grid;
   place-items: center;
   color: #C5663E;
@@ -209,6 +209,7 @@ body.route-home {
   .hero-shell {
     grid-template-columns: 1fr;
     align-content: center;
+    row-gap: clamp(1.75rem, 5vh, 3.25rem);
     padding-top: max(2rem, env(safe-area-inset-top));
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
   }
@@ -225,6 +226,7 @@ body.route-home {
   .hero-content {
     order: 2;
     max-width: 100%;
+    padding-top: clamp(0.5rem, 2vh, 1.25rem);
   }
 
   .hero-image-wrap {
